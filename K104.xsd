@@ -1,0 +1,1365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:enm1="https://soap.api.nav.gov.hu/definitions/model/2.0/altalanos_iranyitoszam"
+        xmlns:meta="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+        xmlns:tns="https://soap.api.nav.gov.hu/definitions/model/2.0/K104/2.3"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        targetNamespace="https://soap.api.nav.gov.hu/definitions/model/2.0/K104/2.3">
+   <import namespace="https://api.nav.gov.hu/definitions/form_xsd_metaschema/1.0"
+           schemaLocation="form_xsd_metaschema.xsd"/>
+   <import namespace="https://soap.api.nav.gov.hu/definitions/model/2.0/altalanos_iranyitoszam"
+           schemaLocation="altalanos_iranyitoszam.xsd"/>
+   <element name="Doc_K104"
+            type="tns:Doc_K104_Type"
+            meta:metaType="DocMetaType">
+      <annotation>
+         <documentation>A nyugdíjat folyósító szerv adatszolgáltatása az Európai Unió más tagállamában illetőséggel rendelkező személy részére az adóévben kifizetett nyugellátás összegéről</documentation>
+      </annotation>
+   </element>
+   <complexType name="Doc_K104_Type">
+      <annotation>
+         <documentation>A teljes bizonylat szerkezetet leíró típus</documentation>
+      </annotation>
+      <sequence>
+         <element name="Form_K104A"
+                  type="tns:Form_K104A_Type"
+                  minOccurs="1"
+                  maxOccurs="1"
+                  meta:metaType="FormMetaType">
+            <annotation>
+               <documentation>K104A részbizonylat</documentation>
+            </annotation>
+         </element>
+         <element name="Form_K104M"
+                  type="tns:Form_K104M_Type"
+                  minOccurs="1"
+                  maxOccurs="unbounded"
+                  meta:metaType="FormMetaType">
+            <annotation>
+               <documentation>K104M részbizonylat</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <simpleType name="Enum_K104A_0A0001D002A">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="H">
+            <annotation>
+               <documentation>H=Helyesbítés</documentation>
+            </annotation>
+         </enumeration>
+      </restriction>
+   </simpleType>
+   <complexType name="Form_K104A_Type">
+      <annotation>
+         <documentation>A teljes nyomtatvány K104A részbiztonylatának szerkezetét leíró típus.</documentation>
+      </annotation>
+      <sequence>
+         <element name="Block_120001"
+                  type="tns:Block_K104A_120001_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Azonosító adatok</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Block_K104A_120001_Type">
+      <annotation>
+         <documentation>Azonosító adatok</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120002"
+                  type="tns:FieldGroup_K104A_120002_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Adatszolgáltató adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120006"
+                  type="tns:FieldGroup_K104A_120006_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Ügyintéző adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120007"
+                  type="tns:FieldGroup_K104A_120007_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Adatszolgáltatás jellemzői</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_K104A_120002_Type">
+      <annotation>
+         <documentation>Adatszolgáltató adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adószám (adoszam)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jogelődjének adószáma (jogelod_adoszam)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Név (nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_K104A_120006_Type">
+      <annotation>
+         <documentation>Ügyintéző adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C023A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Név (ugyintezo_neve)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C024A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Telefonszám (ugyintezo_telefonszama)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_K104A_120007_Type">
+      <annotation>
+         <documentation>Adatszolgáltatás jellemzői</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001D001A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Éve (adatszolg_eve)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="4"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001D003A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Soron kívüli teljesítés jelölése (adatszolg_soron_kivul)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001D002A"
+                  minOccurs="0"
+                  type="tns:Enum_K104A_0A0001D002A"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jellege (adatszolg_jellege)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C002A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Hibásnak minősített adatszolgáltatás vonalkódja (vonalkod)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001D004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Az érintett magánszemélyek száma (maganszemelyek_szama)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="7"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <simpleType name="Enum_K104M_0A0001D001A">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="H">
+            <annotation>
+               <documentation>H</documentation>
+            </annotation>
+         </enumeration>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_K104M_0A0001D002A">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="T">
+            <annotation>
+               <documentation>T</documentation>
+            </annotation>
+         </enumeration>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_K104M_0A0001E0001EA">
+      <annotation>
+         <documentation>Enum értékek </documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="1">
+            <annotation>
+               <documentation>1=egyszeri</documentation>
+            </annotation>
+         </enumeration>
+         <enumeration value="2">
+            <annotation>
+               <documentation>2=többszöri</documentation>
+            </annotation>
+         </enumeration>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_K104M_egyseges_titulus_1">
+      <annotation>
+         <documentation>Enum értékek egyseges_titulus mátrix 1. oszlopból.</documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="Dr."/>
+         <enumeration value="Dr.Dr."/>
+         <enumeration value="Id."/>
+         <enumeration value="Id.Dr."/>
+         <enumeration value="Ifj."/>
+         <enumeration value="Ifj.Dr."/>
+         <enumeration value="Özv."/>
+         <enumeration value="Özv.Dr."/>
+         <enumeration value="Prof."/>
+         <enumeration value="Dr.Pr."/>
+         <enumeration value="Pr.Dr."/>
+         <enumeration value="Dr.Habil."/>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_K104M_egyseges_orszagnev_magyar_angol_megnevezes_2">
+      <annotation>
+         <documentation>Enum értékek egyseges_orszagnev_magyar_angol_megnevezes mátrix 2. oszlopból.</documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="ANDORRA"/>
+         <enumeration value="EGYESÜLT ARAB EMÍRSÉGEK"/>
+         <enumeration value="AFGANISZTÁN"/>
+         <enumeration value="ANTIGUA"/>
+         <enumeration value="ANGUILLA"/>
+         <enumeration value="ALBÁNIA"/>
+         <enumeration value="ÖRMÉNYORSZÁG"/>
+         <enumeration value="ANGOLA"/>
+         <enumeration value="ANTARKTISZ"/>
+         <enumeration value="ARGENTÍNA"/>
+         <enumeration value="AMERIKAI SZAMOA"/>
+         <enumeration value="AUSZTRIA"/>
+         <enumeration value="AUSZTRÁLIA"/>
+         <enumeration value="ARUBA"/>
+         <enumeration value="AALAND SZIGETEK"/>
+         <enumeration value="AZERBAJDZSÁN"/>
+         <enumeration value="BOSZNIA-HERCEGOVINA"/>
+         <enumeration value="BARBADOS"/>
+         <enumeration value="BANGLADES"/>
+         <enumeration value="BELGIUM"/>
+         <enumeration value="BURKINA FASO"/>
+         <enumeration value="BULGÁRIA"/>
+         <enumeration value="BAHRAIN"/>
+         <enumeration value="BURUNDI"/>
+         <enumeration value="BENIN"/>
+         <enumeration value="SAINT BARTHÉLÉMY"/>
+         <enumeration value="BERMUDA"/>
+         <enumeration value="BRUNEI"/>
+         <enumeration value="BOLÍVIA"/>
+         <enumeration value="BONAIRE"/>
+         <enumeration value="BRAZÍLIA"/>
+         <enumeration value="BAHAMA-SZIGETEK NASSAU"/>
+         <enumeration value="BHUTÁN"/>
+         <enumeration value="BOUVET-SZIGET"/>
+         <enumeration value="BOTSWANA"/>
+         <enumeration value="FEHÉROROSZORSZÁG"/>
+         <enumeration value="BELIZE"/>
+         <enumeration value="KANADA"/>
+         <enumeration value="KÓKUSZ (KEELING)-SZIGETEK"/>
+         <enumeration value="KONGÓI DEMOKRATIKUS KÖZTÁRSASÁG"/>
+         <enumeration value="KÖZÉP-AFRIKAI KÖZTÁRSASÁG"/>
+         <enumeration value="KONGÓ"/>
+         <enumeration value="SVÁJC"/>
+         <enumeration value="ELEFÁNTCSONTPART"/>
+         <enumeration value="COOK-SZIGETEK"/>
+         <enumeration value="CHILE"/>
+         <enumeration value="KAMERUN"/>
+         <enumeration value="KÍNA"/>
+         <enumeration value="KOLUMBIA"/>
+         <enumeration value="COSTA RICA"/>
+         <enumeration value="SZERBIA"/>
+         <enumeration value="MONTENEGRO"/>
+         <enumeration value="KUBA"/>
+         <enumeration value="ZÖLDFOKI KÖZTÁRSASÁG"/>
+         <enumeration value="CURACAO"/>
+         <enumeration value="KARÁCSONY-SZIGET"/>
+         <enumeration value="CIPRUS"/>
+         <enumeration value="CSEHORSZÁG"/>
+         <enumeration value="NÉMETORSZÁG"/>
+         <enumeration value="DZSIBUTI"/>
+         <enumeration value="DÁNIA"/>
+         <enumeration value="DOMINIKA"/>
+         <enumeration value="DOMINIKAI KÖZTÁRSASÁG"/>
+         <enumeration value="ALGÉRIA"/>
+         <enumeration value="EQUADOR"/>
+         <enumeration value="ÉSZTORSZÁG"/>
+         <enumeration value="EGYIPTOM"/>
+         <enumeration value="NYUGAT-SZAHARA"/>
+         <enumeration value="ERITREA"/>
+         <enumeration value="SPANYOLORSZÁG"/>
+         <enumeration value="ETIÓPIA"/>
+         <enumeration value="FINNORSZÁG"/>
+         <enumeration value="FIDZSI-SZIGETEK"/>
+         <enumeration value="FALKLAND-SZIGETEK"/>
+         <enumeration value="MIKRONÉZIA"/>
+         <enumeration value="FAROE SZIGETEK"/>
+         <enumeration value="FRANCIAORSZÁG"/>
+         <enumeration value="FRANCE, METROPOLITAN"/>
+         <enumeration value="GABON"/>
+         <enumeration value="EGYESÜLT KIRÁLYSÁG (NAGY BRITANNIA)"/>
+         <enumeration value="GRENADA"/>
+         <enumeration value="GRÚZIA"/>
+         <enumeration value="FRANCIA GUIANA"/>
+         <enumeration value="GUERNSEY"/>
+         <enumeration value="GHANA"/>
+         <enumeration value="GIBRALTÁR"/>
+         <enumeration value="GRÖNLAND"/>
+         <enumeration value="GAMBIA"/>
+         <enumeration value="GUINEA"/>
+         <enumeration value="GUADELOUPE"/>
+         <enumeration value="EGYENLÍTŐI GUINEA"/>
+         <enumeration value="GÖRÖGORSZÁG"/>
+         <enumeration value="DÉLI-GEORGIA ÉS DÉLI- SANDWICH-SZIGETEK"/>
+         <enumeration value="GUATEMALA"/>
+         <enumeration value="GUAM"/>
+         <enumeration value="BISSAU-GUINEA"/>
+         <enumeration value="GUYANA"/>
+         <enumeration value="HONGKONG"/>
+         <enumeration value="HEARD-SZIGET ÉS MCDONALDS-SZIGETEK"/>
+         <enumeration value="HONDURAS"/>
+         <enumeration value="HORVÁTORSZÁG"/>
+         <enumeration value="HAITI"/>
+         <enumeration value="INDONÉZIA"/>
+         <enumeration value="ÍRORSZÁG"/>
+         <enumeration value="IZRAEL"/>
+         <enumeration value="MAN SZIGET"/>
+         <enumeration value="INDIA"/>
+         <enumeration value="BRIT INDIAI-ÓCEÁNIAI TERÜLET"/>
+         <enumeration value="IRAK"/>
+         <enumeration value="IRÁN"/>
+         <enumeration value="IZLAND"/>
+         <enumeration value="OLASZORSZÁG"/>
+         <enumeration value="JERSEY"/>
+         <enumeration value="JAMAICA"/>
+         <enumeration value="JORDÁNIA"/>
+         <enumeration value="JAPÁN"/>
+         <enumeration value="KENYA"/>
+         <enumeration value="KIRGIZISZTÁN"/>
+         <enumeration value="KAMBODZSA"/>
+         <enumeration value="KIRIBATI KÖZTÁRSASÁG TUVALU"/>
+         <enumeration value="COMORE-SZIGETEK"/>
+         <enumeration value="SAINT CHRISTOPHER ÉS NEVIS"/>
+         <enumeration value="KOREAI NDK"/>
+         <enumeration value="DÉL KOREA"/>
+         <enumeration value="KUWAIT"/>
+         <enumeration value="KAJMÁN-SZIGETEK"/>
+         <enumeration value="KAZAHSZTÁN"/>
+         <enumeration value="LAOSZ"/>
+         <enumeration value="LIBANON"/>
+         <enumeration value="SAINT LUCIA"/>
+         <enumeration value="LIECHTENSTEIN"/>
+         <enumeration value="SRI LANKA"/>
+         <enumeration value="LIBERIA"/>
+         <enumeration value="LESOTHO"/>
+         <enumeration value="LITVÁNIA"/>
+         <enumeration value="LUXEMBURG"/>
+         <enumeration value="LETTORSZÁG"/>
+         <enumeration value="LÍBIA"/>
+         <enumeration value="MAROKKÓ"/>
+         <enumeration value="MONACO"/>
+         <enumeration value="MOLDOVA"/>
+         <enumeration value="SAINT MARTIN"/>
+         <enumeration value="MALGAS KÖZTÁRSASÁG"/>
+         <enumeration value="MARSHALL-SZIGETEK"/>
+         <enumeration value="ÉSZAK-MACEDÓNIA"/>
+         <enumeration value="MALI"/>
+         <enumeration value="MIANMAR"/>
+         <enumeration value="MONGÓLIA"/>
+         <enumeration value="MACAO"/>
+         <enumeration value="ÉSZAKI-MARIANA-SZIGETEK"/>
+         <enumeration value="MARTINIQUE"/>
+         <enumeration value="MAURITANIA"/>
+         <enumeration value="MONTSERRAT"/>
+         <enumeration value="MÁLTA"/>
+         <enumeration value="MAURITIUS"/>
+         <enumeration value="MALDÍV-SZIGETEK"/>
+         <enumeration value="MALAWI"/>
+         <enumeration value="MEXIKÓ"/>
+         <enumeration value="MALAJZIA"/>
+         <enumeration value="MOZAMBIK"/>
+         <enumeration value="NAMÍBIA"/>
+         <enumeration value="ÚJ-KALEDÓNIA"/>
+         <enumeration value="NIGER"/>
+         <enumeration value="NORFOLK SZIGETEK"/>
+         <enumeration value="NIGÉRIA"/>
+         <enumeration value="NICARAGUA"/>
+         <enumeration value="HOLLANDIA"/>
+         <enumeration value="NORVÉGIA"/>
+         <enumeration value="NEPÁL"/>
+         <enumeration value="NAURU"/>
+         <enumeration value="NIUE"/>
+         <enumeration value="ÚJ-ZÉLAND"/>
+         <enumeration value="OMÁN"/>
+         <enumeration value="PANAMA"/>
+         <enumeration value="PERU"/>
+         <enumeration value="FRANCIA POLINÉZIA"/>
+         <enumeration value="PÁPUA ÚJ-GINEA"/>
+         <enumeration value="FÜLÖP-SZIGETEK"/>
+         <enumeration value="PAKISZTÁN"/>
+         <enumeration value="LENGYELORSZÁG"/>
+         <enumeration value="SAINT PIERRE ÉS MIQUELON"/>
+         <enumeration value="PITCAIRN-SZIGET"/>
+         <enumeration value="PUERTO RICO"/>
+         <enumeration value="PALESZTÍNA"/>
+         <enumeration value="PORTUGÁLIA"/>
+         <enumeration value="PALAU"/>
+         <enumeration value="PARAGUAY"/>
+         <enumeration value="QUATAR"/>
+         <enumeration value="REUNION"/>
+         <enumeration value="ROMÁNIA"/>
+         <enumeration value="OROSZORSZÁG"/>
+         <enumeration value="RUANDA"/>
+         <enumeration value="SZAUD-ARÁBIA"/>
+         <enumeration value="SOLOMON-SZIGETEK"/>
+         <enumeration value="SEYCHELLE-SZIGETEK"/>
+         <enumeration value="SZUDÁN"/>
+         <enumeration value="SVÉDORSZÁG"/>
+         <enumeration value="SZINGAPÚR"/>
+         <enumeration value="SZENT ILONA"/>
+         <enumeration value="SZLOVÉNIA"/>
+         <enumeration value="SVALBARD ÉS JAN MAYEN"/>
+         <enumeration value="SZLOVÁKIA"/>
+         <enumeration value="SIERRA LEONE"/>
+         <enumeration value="SAN MARINO"/>
+         <enumeration value="SZENEGÁL"/>
+         <enumeration value="SZOMÁLIA"/>
+         <enumeration value="SURINAME"/>
+         <enumeration value="DÉL-SZUDÁN"/>
+         <enumeration value="SAO TOME ÉS PRINCIPE"/>
+         <enumeration value="SALVADOR"/>
+         <enumeration value="ST. MAARTEN"/>
+         <enumeration value="SZÍRIA"/>
+         <enumeration value="SZVÁZIFÖLD"/>
+         <enumeration value="TURKS- ÉS CAICOS-SZIGETEK"/>
+         <enumeration value="CSÁD"/>
+         <enumeration value="FRANCIA DÉLI TERÜLETEK"/>
+         <enumeration value="TOGO"/>
+         <enumeration value="THAIFÖLD"/>
+         <enumeration value="TADZSIKISZTÁN"/>
+         <enumeration value="TOKELAU-SZIGETEK"/>
+         <enumeration value="KELET-TIMOR"/>
+         <enumeration value="TÜRKMENISZTÁN"/>
+         <enumeration value="TUNÉZIA"/>
+         <enumeration value="TONGA"/>
+         <enumeration value="TÖRÖKORSZÁG"/>
+         <enumeration value="TRINIDAD ÉS TOBAGO"/>
+         <enumeration value="TUVALU"/>
+         <enumeration value="TAIWAN"/>
+         <enumeration value="TANZÁNIA"/>
+         <enumeration value="UKRAJNA"/>
+         <enumeration value="UGANDA"/>
+         <enumeration value="AMERIKAI CSENDES-ÓCEÁNI-SZIGETEK"/>
+         <enumeration value="AMERIKAI EGYESÜLT ÁLLAMOK"/>
+         <enumeration value="URUGUAY"/>
+         <enumeration value="ÜZBEGISZTÁN"/>
+         <enumeration value="VATIKÁN"/>
+         <enumeration value="SAINT VINCENT ÉS GRENADINES"/>
+         <enumeration value="VENEZUELA"/>
+         <enumeration value="BRIT VIRGIN-SZIGETEK"/>
+         <enumeration value="AMERIKAI VIRGIN-SZIGETEK"/>
+         <enumeration value="VIETNÁMI KÖZTÁRSASÁG"/>
+         <enumeration value="VANUATU"/>
+         <enumeration value="GÁZA ÉS JERIKÓ"/>
+         <enumeration value="WALLIS ÉS FUTUNA"/>
+         <enumeration value="NYUGAT-SZAMOA"/>
+         <enumeration value="KOSZOVÓ"/>
+         <enumeration value="JEMENI ARAB KÖZTÁRSASÁG"/>
+         <enumeration value="MAYOTTE"/>
+         <enumeration value="DÉL-AFRIKAI KÖZTÁRSASÁG"/>
+         <enumeration value="ZAMBIA"/>
+         <enumeration value="ZIMBABWE"/>
+      </restriction>
+   </simpleType>
+   <simpleType name="Enum_K104M_egyseges_orszagnev_magyar_angol_megnevezes_4">
+      <annotation>
+         <documentation>Enum értékek egyseges_orszagnev_magyar_angol_megnevezes mátrix 4. oszlopból.</documentation>
+      </annotation>
+      <restriction base="xs:string">
+         <enumeration value="AD"/>
+         <enumeration value="AE"/>
+         <enumeration value="AF"/>
+         <enumeration value="AG"/>
+         <enumeration value="AI"/>
+         <enumeration value="AL"/>
+         <enumeration value="AM"/>
+         <enumeration value="AO"/>
+         <enumeration value="AQ"/>
+         <enumeration value="AR"/>
+         <enumeration value="AS"/>
+         <enumeration value="AT"/>
+         <enumeration value="AU"/>
+         <enumeration value="AW"/>
+         <enumeration value="AX"/>
+         <enumeration value="AZ"/>
+         <enumeration value="BA"/>
+         <enumeration value="BB"/>
+         <enumeration value="BD"/>
+         <enumeration value="BE"/>
+         <enumeration value="BF"/>
+         <enumeration value="BG"/>
+         <enumeration value="BH"/>
+         <enumeration value="BI"/>
+         <enumeration value="BJ"/>
+         <enumeration value="BL"/>
+         <enumeration value="BM"/>
+         <enumeration value="BN"/>
+         <enumeration value="BO"/>
+         <enumeration value="BQ"/>
+         <enumeration value="BR"/>
+         <enumeration value="BS"/>
+         <enumeration value="BT"/>
+         <enumeration value="BV"/>
+         <enumeration value="BW"/>
+         <enumeration value="BY"/>
+         <enumeration value="BZ"/>
+         <enumeration value="CA"/>
+         <enumeration value="CC"/>
+         <enumeration value="CD"/>
+         <enumeration value="CF"/>
+         <enumeration value="CG"/>
+         <enumeration value="CH"/>
+         <enumeration value="CI"/>
+         <enumeration value="CK"/>
+         <enumeration value="CL"/>
+         <enumeration value="CM"/>
+         <enumeration value="CN"/>
+         <enumeration value="CO"/>
+         <enumeration value="CR"/>
+         <enumeration value="RS"/>
+         <enumeration value="ME"/>
+         <enumeration value="CU"/>
+         <enumeration value="CV"/>
+         <enumeration value="CW"/>
+         <enumeration value="CX"/>
+         <enumeration value="CY"/>
+         <enumeration value="CZ"/>
+         <enumeration value="DE"/>
+         <enumeration value="DJ"/>
+         <enumeration value="DK"/>
+         <enumeration value="DM"/>
+         <enumeration value="DO"/>
+         <enumeration value="DZ"/>
+         <enumeration value="EC"/>
+         <enumeration value="EE"/>
+         <enumeration value="EG"/>
+         <enumeration value="EH"/>
+         <enumeration value="ER"/>
+         <enumeration value="ES"/>
+         <enumeration value="ET"/>
+         <enumeration value="FI"/>
+         <enumeration value="FJ"/>
+         <enumeration value="FK"/>
+         <enumeration value="FM"/>
+         <enumeration value="FO"/>
+         <enumeration value="FR"/>
+         <enumeration value="FX"/>
+         <enumeration value="GA"/>
+         <enumeration value="GB"/>
+         <enumeration value="GD"/>
+         <enumeration value="GE"/>
+         <enumeration value="GF"/>
+         <enumeration value="GG"/>
+         <enumeration value="GH"/>
+         <enumeration value="GI"/>
+         <enumeration value="GL"/>
+         <enumeration value="GM"/>
+         <enumeration value="GN"/>
+         <enumeration value="GP"/>
+         <enumeration value="GQ"/>
+         <enumeration value="GR"/>
+         <enumeration value="GS"/>
+         <enumeration value="GT"/>
+         <enumeration value="GU"/>
+         <enumeration value="GW"/>
+         <enumeration value="GY"/>
+         <enumeration value="HK"/>
+         <enumeration value="HM"/>
+         <enumeration value="HN"/>
+         <enumeration value="HR"/>
+         <enumeration value="HT"/>
+         <enumeration value="ID"/>
+         <enumeration value="IE"/>
+         <enumeration value="IL"/>
+         <enumeration value="IM"/>
+         <enumeration value="IN"/>
+         <enumeration value="IO"/>
+         <enumeration value="IQ"/>
+         <enumeration value="IR"/>
+         <enumeration value="IS"/>
+         <enumeration value="IT"/>
+         <enumeration value="JE"/>
+         <enumeration value="JM"/>
+         <enumeration value="JO"/>
+         <enumeration value="JP"/>
+         <enumeration value="KE"/>
+         <enumeration value="KG"/>
+         <enumeration value="KH"/>
+         <enumeration value="KI"/>
+         <enumeration value="KM"/>
+         <enumeration value="KN"/>
+         <enumeration value="KP"/>
+         <enumeration value="KR"/>
+         <enumeration value="KW"/>
+         <enumeration value="KY"/>
+         <enumeration value="KZ"/>
+         <enumeration value="LA"/>
+         <enumeration value="LB"/>
+         <enumeration value="LC"/>
+         <enumeration value="LI"/>
+         <enumeration value="LK"/>
+         <enumeration value="LR"/>
+         <enumeration value="LS"/>
+         <enumeration value="LT"/>
+         <enumeration value="LU"/>
+         <enumeration value="LV"/>
+         <enumeration value="LY"/>
+         <enumeration value="MA"/>
+         <enumeration value="MC"/>
+         <enumeration value="MD"/>
+         <enumeration value="MF"/>
+         <enumeration value="MG"/>
+         <enumeration value="MH"/>
+         <enumeration value="MK"/>
+         <enumeration value="ML"/>
+         <enumeration value="MM"/>
+         <enumeration value="MN"/>
+         <enumeration value="MO"/>
+         <enumeration value="MP"/>
+         <enumeration value="MQ"/>
+         <enumeration value="MR"/>
+         <enumeration value="MS"/>
+         <enumeration value="MT"/>
+         <enumeration value="MU"/>
+         <enumeration value="MV"/>
+         <enumeration value="MW"/>
+         <enumeration value="MX"/>
+         <enumeration value="MY"/>
+         <enumeration value="MZ"/>
+         <enumeration value="NA"/>
+         <enumeration value="NC"/>
+         <enumeration value="NE"/>
+         <enumeration value="NF"/>
+         <enumeration value="NG"/>
+         <enumeration value="NI"/>
+         <enumeration value="NL"/>
+         <enumeration value="NO"/>
+         <enumeration value="NP"/>
+         <enumeration value="NR"/>
+         <enumeration value="NU"/>
+         <enumeration value="NZ"/>
+         <enumeration value="OM"/>
+         <enumeration value="PA"/>
+         <enumeration value="PE"/>
+         <enumeration value="PF"/>
+         <enumeration value="PG"/>
+         <enumeration value="PH"/>
+         <enumeration value="PK"/>
+         <enumeration value="PL"/>
+         <enumeration value="PM"/>
+         <enumeration value="PN"/>
+         <enumeration value="PR"/>
+         <enumeration value="PS"/>
+         <enumeration value="PT"/>
+         <enumeration value="PW"/>
+         <enumeration value="PY"/>
+         <enumeration value="QA"/>
+         <enumeration value="RE"/>
+         <enumeration value="RO"/>
+         <enumeration value="RU"/>
+         <enumeration value="RW"/>
+         <enumeration value="SA"/>
+         <enumeration value="SB"/>
+         <enumeration value="SC"/>
+         <enumeration value="SD"/>
+         <enumeration value="SE"/>
+         <enumeration value="SG"/>
+         <enumeration value="SH"/>
+         <enumeration value="SI"/>
+         <enumeration value="SJ"/>
+         <enumeration value="SK"/>
+         <enumeration value="SL"/>
+         <enumeration value="SM"/>
+         <enumeration value="SN"/>
+         <enumeration value="SO"/>
+         <enumeration value="SR"/>
+         <enumeration value="SS"/>
+         <enumeration value="ST"/>
+         <enumeration value="SV"/>
+         <enumeration value="SX"/>
+         <enumeration value="SY"/>
+         <enumeration value="SZ"/>
+         <enumeration value="TC"/>
+         <enumeration value="TD"/>
+         <enumeration value="TF"/>
+         <enumeration value="TG"/>
+         <enumeration value="TH"/>
+         <enumeration value="TJ"/>
+         <enumeration value="TK"/>
+         <enumeration value="TL"/>
+         <enumeration value="TM"/>
+         <enumeration value="TN"/>
+         <enumeration value="TO"/>
+         <enumeration value="TR"/>
+         <enumeration value="TT"/>
+         <enumeration value="TV"/>
+         <enumeration value="TW"/>
+         <enumeration value="TZ"/>
+         <enumeration value="UA"/>
+         <enumeration value="UG"/>
+         <enumeration value="UM"/>
+         <enumeration value="US"/>
+         <enumeration value="UY"/>
+         <enumeration value="UZ"/>
+         <enumeration value="VA"/>
+         <enumeration value="VC"/>
+         <enumeration value="VE"/>
+         <enumeration value="VG"/>
+         <enumeration value="VI"/>
+         <enumeration value="VN"/>
+         <enumeration value="VU"/>
+         <enumeration value="W1"/>
+         <enumeration value="WF"/>
+         <enumeration value="WS"/>
+         <enumeration value="XK"/>
+         <enumeration value="YE"/>
+         <enumeration value="YT"/>
+         <enumeration value="ZA"/>
+         <enumeration value="ZM"/>
+         <enumeration value="ZW"/>
+      </restriction>
+   </simpleType>
+   <complexType name="Form_K104M_Type">
+      <annotation>
+         <documentation>A teljes nyomtatvány K104M részbiztonylatának szerkezetét leíró típus.</documentation>
+      </annotation>
+      <sequence>
+         <element name="Block_120001"
+                  type="tns:Block_K104M_120001_Type"
+                  minOccurs="0"
+                  meta:metaType="BlockMetaType">
+            <annotation>
+               <documentation>Magánszemélyenkénti összesítő</documentation>
+            </annotation>
+         </element>
+      </sequence>
+   </complexType>
+   <complexType name="Block_K104M_120001_Type">
+      <annotation>
+         <documentation>Magánszemélyenkénti összesítő</documentation>
+      </annotation>
+      <all>
+         <element name="FieldGroup_120002"
+                  type="tns:FieldGroup_K104M_120002_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Magánszemély adatai</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120009"
+                  type="tns:FieldGroup_K104M_120009_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Adatszolgáltatás jellege</documentation>
+            </annotation>
+         </element>
+         <element name="FieldGroup_120010"
+                  type="tns:FieldGroup_K104M_120010_Type"
+                  minOccurs="0"
+                  meta:metaType="FieldGroupMetaType">
+            <annotation>
+               <documentation>Nyugellátás adatai</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_K104M_120002_Type">
+      <annotation>
+         <documentation>Magánszemély adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001C005A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adóazonosító jele (adoazonosito_jel)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="10"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C006A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Képzett azonosító száma (kepzett_adoazonosito_szam)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="4"/>
+                  <maxLength value="10"/>
+                  <pattern value="ENY[A-Z0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C007A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Titulusa (titulus)</documentation>
+            </annotation>
+            <simpleType>
+               <union memberTypes="tns:Enum_K104M_egyseges_titulus_1">
+                  <simpleType>
+                     <restriction base="string">
+                        <minLength value="1"/>
+                        <maxLength value="20"/>
+                        <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+                     </restriction>
+                  </simpleType>
+               </union>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C008A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Családi neve (vnev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C009A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Utóneve (knev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="40"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C010A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Születési helye (szul_hely)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C011A"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Születési ideje (szul_ido)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C012A"
+                  minOccurs="0"
+                  type="xs:boolean"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Számított mező, tartalma kalkulációval (vagy XPath futtatással) kerül meghatározásra. ¦ Külföldi lakcím (ennek hiányában levelezési vagy elérhetőségi cím) ¦ Külföldi cím (lakcim_kulfoldi)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C013A"
+                  minOccurs="0"
+                  type="tns:Enum_K104M_egyseges_orszagnev_magyar_angol_megnevezes_4"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Külföldi lakcím (ennek hiányában levelezési vagy elérhetőségi cím) ¦ Országkód (lakcim_orszagkod)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C014A"
+                  minOccurs="0"
+                  type="tns:Enum_K104M_egyseges_orszagnev_magyar_angol_megnevezes_2"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Külföldi lakcím (ennek hiányában levelezési vagy elérhetőségi cím) ¦ Ország (lakcim_orszag)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001C015A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Külföldi lakcím (ennek hiányában levelezési vagy elérhetőségi cím) ¦ Irányítószám (lakcim_iranyitoszam)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="9"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C016A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Külföldi lakcím (ennek hiányában levelezési vagy elérhetőségi cím) ¦ Város, közterület neve, közterület jellege, házszám, stb. (lakcim_varos_egyben)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C017A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Magyarországon lakóhely (ennek hiányában tartózkodási hely) címe ¦ Irányítószám (lakohely_iranyitoszam)</documentation>
+            </annotation>
+            <simpleType>
+               <union memberTypes="enm1:altalanos_iranyitoszam_2">
+                  <simpleType>
+                     <restriction base="string">
+                        <minLength value="1"/>
+                        <maxLength value="4"/>
+                        <pattern value="[0-9]+"/>
+                     </restriction>
+                  </simpleType>
+               </union>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C018A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Magyarországon lakóhely (ennek hiányában tartózkodási hely) címe ¦ Város/község (lakohely_varos)</documentation>
+            </annotation>
+            <simpleType>
+               <union memberTypes="enm1:altalanos_iranyitoszam_1">
+                  <simpleType>
+                     <restriction base="string">
+                        <minLength value="1"/>
+                        <maxLength value="80"/>
+                        <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+                     </restriction>
+                  </simpleType>
+               </union>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C019A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Magyarországon lakóhely (ennek hiányában tartózkodási hely) címe ¦ Közterület neve, közterület jellege, házszám, stb. (lakohely_kozterulet_egyben)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C003A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adatszolgáltató adószáma (adatszolgaltato_adoszam)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="11"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001C004A"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Adatszolgáltató neve (adatszolgaltato_nev)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="80"/>
+                  <pattern value="[\P{C}]*[^\s][\P{C}]*"/>
+               </restriction>
+            </simpleType>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_K104M_120009_Type">
+      <annotation>
+         <documentation>Adatszolgáltatás jellege</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001D001A"
+                  minOccurs="0"
+                  type="tns:Enum_K104M_0A0001D001A"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jelölje "H" betűvel, ha az adatszolgáltatása adózói javításnak (helyesbítésnek) minősül! (helyesbites)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001D002A"
+                  minOccurs="0"
+                  type="tns:Enum_K104M_0A0001D002A"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Jelölje "T" betűvel, ha a magánszeméllyel kapcsolatosan adatszolgáltatási kötelezettség nem terhelte! (torles)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+   <complexType name="FieldGroup_K104M_120010_Type">
+      <annotation>
+         <documentation>Nyugellátás adatai</documentation>
+      </annotation>
+      <all>
+         <element name="Field_0A0001E0001BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Korhatár előtti nyugdíj ¦ Ellátás összege forintban ([14K104M]B1)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0001CA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Korhatár előtti nyugdíj ¦ Kifizetés kezdete ([14K104M]C1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0001DA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Korhatár előtti nyugdíj ¦ Kifizetés vége ([14K104M]D1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0001EA"
+                  minOccurs="0"
+                  type="tns:Enum_K104M_0A0001E0001EA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Korhatár előtti nyugdíj ¦ Kifizetés időszakossága ([14K104M]E1)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0002BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Öregségi / garanciális nyugdíj ¦ Ellátás összege forintban ([14K104M]B2)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0002CA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Öregségi / garanciális nyugdíj ¦ Kifizetés kezdete ([14K104M]C2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0002DA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Öregségi / garanciális nyugdíj ¦ Kifizetés vége ([14K104M]D2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0002EA"
+                  minOccurs="0"
+                  type="tns:Enum_K104M_0A0001E0001EA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Öregségi / garanciális nyugdíj ¦ Kifizetés időszakossága ([14K104M]E2)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0003BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Özvegységi / árvasági / egyéb hozzátartozói nyugdíj ¦ Ellátás összege forintban ([14K104M]B3)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0003CA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Özvegységi / árvasági / egyéb hozzátartozói nyugdíj ¦ Kifizetés kezdete ([14K104M]C3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0003DA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Özvegységi / árvasági / egyéb hozzátartozói nyugdíj ¦ Kifizetés vége ([14K104M]D3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0003EA"
+                  minOccurs="0"
+                  type="tns:Enum_K104M_0A0001E0001EA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Özvegységi / árvasági / egyéb hozzátartozói nyugdíj ¦ Kifizetés időszakossága ([14K104M]E3)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0004BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Rokkantság miatt folyósított ellátás ¦ Ellátás összege forintban ([14K104M]B4)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0004CA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Rokkantság miatt folyósított ellátás ¦ Kifizetés kezdete ([14K104M]C4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0004DA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Rokkantság miatt folyósított ellátás ¦ Kifizetés vége ([14K104M]D4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0004EA"
+                  minOccurs="0"
+                  type="tns:Enum_K104M_0A0001E0001EA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Rokkantság miatt folyósított ellátás ¦ Kifizetés időszakossága ([14K104M]E4)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0005BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Háborús ellátás ¦ Ellátás összege forintban ([14K104M]B5)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0005CA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Háborús ellátás ¦ Kifizetés kezdete ([14K104M]C5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0005DA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Háborús ellátás ¦ Kifizetés vége ([14K104M]D5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0005EA"
+                  minOccurs="0"
+                  type="tns:Enum_K104M_0A0001E0001EA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Háborús ellátás ¦ Kifizetés időszakossága ([14K104M]E5)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0006BA"
+                  minOccurs="0"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Egyéb ellátás ¦ Ellátás összege forintban ([14K104M]B6)</documentation>
+            </annotation>
+            <simpleType>
+               <restriction base="string">
+                  <minLength value="1"/>
+                  <maxLength value="12"/>
+                  <pattern value="[0-9]+"/>
+               </restriction>
+            </simpleType>
+         </element>
+         <element name="Field_0A0001E0006CA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Egyéb ellátás ¦ Kifizetés kezdete ([14K104M]C6)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0006DA"
+                  minOccurs="0"
+                  type="xs:date"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Egyéb ellátás ¦ Kifizetés vége ([14K104M]D6)</documentation>
+            </annotation>
+         </element>
+         <element name="Field_0A0001E0006EA"
+                  minOccurs="0"
+                  type="tns:Enum_K104M_0A0001E0001EA"
+                  meta:metaType="FieldMetaType">
+            <annotation>
+               <documentation>Egyéb ellátás ¦ Kifizetés időszakossága ([14K104M]E6)</documentation>
+            </annotation>
+         </element>
+      </all>
+   </complexType>
+</schema>
